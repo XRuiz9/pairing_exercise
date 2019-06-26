@@ -1,0 +1,6 @@
+<h1><%= @guest.name %></h1>
+<% if @guest.room %>
+	<p>Currently staying in <%= link_to "Room #{@guest.room.roomnum}", room_path(@guest.room) %></p>
+<% else %>
+	<p>This guest has not booked a room yet.</p>
+<% end %>

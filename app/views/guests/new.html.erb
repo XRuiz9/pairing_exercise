@@ -1,0 +1,17 @@
+<h1>Create a New Guest</h1>
+
+<% if flash.now[:error] %>
+	<% flash.now[:error].each do |message| %>
+		<li><%= message %></li>
+	<% end %>
+<% end %>
+
+<%= form_for (Guest.new) do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %><br>
+
+	<%= f.label :room_id %>
+	<%= f.collection_select :room_id, Room.all, :id, :roomnum %>
+
+	<%= f.submit %>
+<% end %>

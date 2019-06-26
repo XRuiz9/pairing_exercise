@@ -1,0 +1,10 @@
+<h1>Update Guest</h1>
+<%= form_for @guest do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %><br>
+
+	<%= f.label :room_id %>
+	<%= f.collection_select :room_id, Room.all, :id, :roomnum %>
+
+	<%= f.submit %>
+<% end %>

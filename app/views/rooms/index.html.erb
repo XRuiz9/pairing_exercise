@@ -1,0 +1,11 @@
+<h1>Rooms</h1>
+<ul>
+	<% @rooms.each do |room| %>
+		<li>
+			<%= link_to "Room #{room.roomnum}", room_path(room) %>
+			<% if room.guests.count >= room.capacity %>
+				FULLY BOOKED
+			<% end %>
+		</li>
+	<% end %>
+</ul>
